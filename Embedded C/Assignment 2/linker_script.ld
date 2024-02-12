@@ -7,8 +7,8 @@ MEMORY
 
 SECTIONS
 {
-    . = 10000 ;
-    .startup . :
+    . = 0x10000 ;
+    .elmooo_startup . :
     {
         startup.o (.text)
     }> Mem
@@ -22,7 +22,7 @@ SECTIONS
     }> Mem
     .bss :
     {
-        *(bss) *(COMMON)
+        *(bss)
     }>Mem
     . = . + 0x1000;
     stack_top = .;
